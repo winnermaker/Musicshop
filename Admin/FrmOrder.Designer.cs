@@ -39,7 +39,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(0, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 1;
@@ -47,7 +47,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(588, 306);
+            this.btnDelete.Location = new System.Drawing.Point(792, 277);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 2;
@@ -57,7 +57,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(669, 306);
+            this.btnClose.Location = new System.Drawing.Point(873, 278);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 3;
@@ -68,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 311);
+            this.label2.Location = new System.Drawing.Point(12, 283);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 13);
             this.label2.TabIndex = 4;
@@ -76,7 +76,7 @@
             // 
             // txtValue
             // 
-            this.txtValue.Location = new System.Drawing.Point(131, 308);
+            this.txtValue.Location = new System.Drawing.Point(141, 280);
             this.txtValue.Name = "txtValue";
             this.txtValue.ReadOnly = true;
             this.txtValue.Size = new System.Drawing.Size(130, 20);
@@ -84,18 +84,20 @@
             // 
             // lstOrder
             // 
+            this.lstOrder.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstOrder.FormattingEnabled = true;
-            this.lstOrder.Location = new System.Drawing.Point(15, 44);
+            this.lstOrder.ItemHeight = 14;
+            this.lstOrder.Location = new System.Drawing.Point(3, 44);
             this.lstOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstOrder.Name = "lstOrder";
-            this.lstOrder.Size = new System.Drawing.Size(729, 251);
+            this.lstOrder.Size = new System.Drawing.Size(945, 228);
             this.lstOrder.TabIndex = 6;
             // 
             // FrmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 348);
+            this.ClientSize = new System.Drawing.Size(956, 318);
             this.ControlBox = false;
             this.Controls.Add(this.lstOrder);
             this.Controls.Add(this.txtValue);

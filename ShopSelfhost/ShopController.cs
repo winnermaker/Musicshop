@@ -231,7 +231,7 @@ namespace ShopSelfhost
         {   //delete
             try
             {
-                int lcRecCount = clsDbConnection.Execute("DELETE FROM Order WHERE OrderID = @OrderID",
+                int lcRecCount = clsDbConnection.Execute("DELETE FROM MyOrder WHERE OrderID = @OrderID",
                     prepareOrderParameters(OrderID));
 
                 if (lcRecCount == 1)

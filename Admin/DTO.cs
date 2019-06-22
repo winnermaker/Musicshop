@@ -51,7 +51,7 @@ namespace Admin
         public int SerialNo { get; set; }
         public override string ToString()
         {
-            return OrderID + "\t \t" + CustName + "\t" + CustMail + "\t" + CustPhone +"\t"+ SerialNo;
+            return String.Format("{0}| {1,-20}\t| {2,-20}\t| {3,-30}\t\t| {4,-5}| {5:C}\t| {6,-20}\t", OrderID, CustName, CustPhone, CustMail, SerialNo, OrderPrice, OrderDate.ToShortDateString());
         }
 
     }

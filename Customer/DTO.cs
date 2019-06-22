@@ -33,9 +33,20 @@ namespace Customer
         {
             return new clsAllInstruments() { InstrumentType = Char.ToUpper(prChoice) };
         }
+        public string extendType()
+        {
+            switch (InstrumentType)
+            {
+                case 'N':
+                    return "new";
+                default:
+                    return "used";
+
+            }
+        }
         public override string ToString()
         {
-            return InstrumentName + "\t \t" + ModifiedDate.Date + "\t"+ InstrumentType;
+            return String.Format("{0,-20}\t|   {1,-10}\t|   {2,-20}\t|   {3,-20}\t|   {4:C}", InstrumentName, extendType(),Tuning, Quantity, Price);
         }
     }
 

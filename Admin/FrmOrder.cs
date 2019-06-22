@@ -29,6 +29,7 @@ namespace Admin
                 _Orderlist = await ServiceClient.GetOrdersAsync();
                 lstOrder.DataSource = null;
                 lstOrder.DataSource = _Orderlist;
+                txtValue.Text = TotalValue().ToString();
             }
             catch (Exception e)
             {
@@ -55,6 +56,14 @@ namespace Admin
         private void FrmOrder_Load(object sender, EventArgs e)
         {
             UpdateDisplayAsync();
+        }
+
+        public Decimal TotalValue()
+        {
+            decimal lcTotal = 0;
+            foreach (clsMyOrder lcOrder in _Orderlist)
+                lcTotal += lcOrder.OrderPrice;
+            return lcTotal;
         }
     }
 }

@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSelfhost", "ShopSelfhos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer", "Customer\Customer.csproj", "{AD12F2AB-36CF-4CB3-A99F-036E9E87D9E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery4Universal", "..\..\..\Tutorial\ArtGalleryV2\Gallery4Universal\Gallery4Universal.csproj", "{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,32 +89,6 @@ Global
 		{AD12F2AB-36CF-4CB3-A99F-036E9E87D9E5}.Release|x86.ActiveCfg = Release|x86
 		{AD12F2AB-36CF-4CB3-A99F-036E9E87D9E5}.Release|x86.Build.0 = Release|x86
 		{AD12F2AB-36CF-4CB3-A99F-036E9E87D9E5}.Release|x86.Deploy.0 = Release|x86
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|ARM.ActiveCfg = Debug|ARM
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|ARM.Build.0 = Debug|ARM
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|ARM.Deploy.0 = Debug|ARM
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|ARM64.ActiveCfg = Debug|ARM64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|ARM64.Build.0 = Debug|ARM64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|ARM64.Deploy.0 = Debug|ARM64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|x64.ActiveCfg = Debug|x64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|x64.Build.0 = Debug|x64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|x64.Deploy.0 = Debug|x64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|x86.ActiveCfg = Debug|x86
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|x86.Build.0 = Debug|x86
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Debug|x86.Deploy.0 = Debug|x86
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|Any CPU.ActiveCfg = Release|x86
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|ARM.ActiveCfg = Release|ARM
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|ARM.Build.0 = Release|ARM
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|ARM.Deploy.0 = Release|ARM
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|ARM64.ActiveCfg = Release|ARM64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|ARM64.Build.0 = Release|ARM64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|ARM64.Deploy.0 = Release|ARM64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|x64.ActiveCfg = Release|x64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|x64.Build.0 = Release|x64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|x64.Deploy.0 = Release|x64
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|x86.ActiveCfg = Release|x86
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|x86.Build.0 = Release|x86
-		{9FDC5BD3-3BDC-459B-959D-8EE77ABCF6CB}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,13 +6,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="750" Width="1240">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="690" Width="900">
 
     <Grid>
-        <TextBlock x:Name="txtNameLable" HorizontalAlignment="Left" Margin="45,10,0,0" Text="MY MUSICSHOP" VerticalAlignment="Top" FontSize="24"/>
-        <TextBlock x:Name="txtDescription" HorizontalAlignment="Left" Margin="270,70,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="71" Width="929"/>
-        <TextBlock x:Name="TxtCategoryLable" HorizontalAlignment="Left" Margin="45,70,0,0" Text="" VerticalAlignment="Top" FontSize="22"/>
-        <Button x:Name="btnOpen" Content="Open" HorizontalAlignment="Left" Margin="43,690,0,0" VerticalAlignment="Top" FontSize="20" Click="BtnOpen_Click"/>
-        <ListBox x:Name="lstInstruments" Height="445" DoubleTapped="LstInstruments_DoubleTapped"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,10,0,0" Text="MY MUSICSHOP" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="txtDescription" HorizontalAlignment="Left" Margin="200,70,0,45" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock x:Name="TxtCategoryLable" HorizontalAlignment="Left" Margin="45,70,0,0" VerticalAlignment="Top" FontSize="22"/>
+
+        <Button x:Name="btnOpen" Content="Open" HorizontalAlignment="Left" Margin="43,640,0,0" VerticalAlignment="Top" FontSize="20" Click="BtnOpen_Click"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="45,200,0,0" Text="Instrument" VerticalAlignment="Top" FontSize="22"/>
+        <TextBlock HorizontalAlignment="Left" Margin="250,200,0,0" Text="Type" VerticalAlignment="Top" FontSize="22"/>
+        <TextBlock HorizontalAlignment="Left" Margin="360,200,0,0" Text="Tuning" VerticalAlignment="Top" FontSize="22"/>
+        <TextBlock HorizontalAlignment="Left" Margin="480,200,0,0" Text="Quantity" VerticalAlignment="Top" FontSize="22"/>
+        <TextBlock HorizontalAlignment="Left" Margin="600,200,0,0" Text="Price" VerticalAlignment="Top" FontSize="22"/>
+
+        <ListBox x:Name="lstInstruments" Height="400" DoubleTapped="LstInstruments_DoubleTapped" HorizontalAlignment="Left" Margin="45,222,0,45" FontSize="20" VerticalAlignment="Stretch" Width="829"/>
     </Grid>
 </Page>
