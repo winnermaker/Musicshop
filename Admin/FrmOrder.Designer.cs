@@ -39,17 +39,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 18);
+            this.label1.Location = new System.Drawing.Point(0, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(66, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Order";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(792, 277);
+            this.btnDelete.Location = new System.Drawing.Point(1584, 533);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(150, 44);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -57,9 +59,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(873, 278);
+            this.btnClose.Location = new System.Drawing.Point(1746, 535);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(150, 44);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -68,36 +71,38 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 283);
+            this.label2.Location = new System.Drawing.Point(24, 544);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 13);
+            this.label2.Size = new System.Drawing.Size(228, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Total Order Value in $:";
             // 
             // txtValue
             // 
-            this.txtValue.Location = new System.Drawing.Point(141, 280);
+            this.txtValue.Location = new System.Drawing.Point(282, 538);
+            this.txtValue.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtValue.Name = "txtValue";
             this.txtValue.ReadOnly = true;
-            this.txtValue.Size = new System.Drawing.Size(130, 20);
+            this.txtValue.Size = new System.Drawing.Size(256, 31);
             this.txtValue.TabIndex = 5;
             // 
             // lstOrder
             // 
             this.lstOrder.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstOrder.FormattingEnabled = true;
-            this.lstOrder.ItemHeight = 14;
-            this.lstOrder.Location = new System.Drawing.Point(3, 44);
-            this.lstOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstOrder.ItemHeight = 28;
+            this.lstOrder.Location = new System.Drawing.Point(6, 85);
+            this.lstOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstOrder.Name = "lstOrder";
-            this.lstOrder.Size = new System.Drawing.Size(945, 228);
+            this.lstOrder.Size = new System.Drawing.Size(1886, 424);
             this.lstOrder.TabIndex = 6;
             // 
             // FrmOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 318);
+            this.ClientSize = new System.Drawing.Size(1912, 612);
             this.ControlBox = false;
             this.Controls.Add(this.lstOrder);
             this.Controls.Add(this.txtValue);
@@ -105,8 +110,9 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FrmOrder";
-            this.Text = "FrmOrder";
+            this.Text = "Order Log";
             this.Load += new System.EventHandler(this.FrmOrder_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

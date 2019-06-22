@@ -55,11 +55,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.ClientSize = new System.Drawing.Size(714, 371);
-            this.ControlBox = false;
             this.Controls.Add(this.txtManufacturer);
             this.Controls.Add(this.label5);
             this.Margin = new System.Windows.Forms.Padding(12);
             this.Name = "FrmNewInstrument";
+            this.Text = "New Instrument";
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.txtManufacturer, 0);
             this.ResumeLayout(false);

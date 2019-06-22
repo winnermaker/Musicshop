@@ -83,13 +83,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.ClientSize = new System.Drawing.Size(714, 395);
-            this.ControlBox = false;
             this.Controls.Add(this.label5);
             this.Controls.Add(this.rbtnPoor);
             this.Controls.Add(this.rbtnAverage);
             this.Controls.Add(this.rbtnNew);
             this.Margin = new System.Windows.Forms.Padding(12);
             this.Name = "FrmUsedInstrument";
+            this.Text = "Used Instrument";
             this.Controls.SetChildIndex(this.rbtnNew, 0);
             this.Controls.SetChildIndex(this.rbtnAverage, 0);
             this.Controls.SetChildIndex(this.rbtnPoor, 0);
