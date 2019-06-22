@@ -35,7 +35,7 @@ namespace Admin
         }
         public override string ToString()
         {
-            return InstrumentName + "\t \t" + ModifiedDate.ToShortDateString() + "\t"+ InstrumentType;
+            return string.Format("{0,-10}\t|  {1,-20}\t|  {2,-20}|  {3,-20}|  {4,-10}\t| {6,-20}   |  {5:C}", SerialNo, InstrumentName, Tuning, InstrumentType, Quantity, Price, ModifiedDate.ToString("dd/MM/yyyy hh:mm tt") );
         }
     }
 
@@ -51,7 +51,7 @@ namespace Admin
         public int SerialNo { get; set; }
         public override string ToString()
         {
-            return String.Format("{0}| {1,-20}\t| {2,-20}\t| {3,-30}\t\t| {4,-5}| {5:C}\t| {6,-20}\t", OrderID, CustName, CustPhone, CustMail, SerialNo, OrderPrice, OrderDate.ToShortDateString());
+            return String.Format("{0,-5}| {1,-20}\t| {2,-20}\t| {3,-30}\t\t| {4,-5}| {5:C}\t| {6,-20}\t", OrderID, CustName, CustPhone, CustMail, SerialNo, OrderPrice, OrderDate.ToString("dd/mm/yyyy"));
         }
 
     }

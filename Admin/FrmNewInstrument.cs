@@ -33,6 +33,17 @@ namespace Admin
             base.pushData();
             _Instrument.Manufacturer = txtManufacturer.Text;
         }
-
+        public override bool isValid()
+        {
+            if(txtManufacturer.Text != "")
+            {
+                return base.isValid();
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
     }
 }

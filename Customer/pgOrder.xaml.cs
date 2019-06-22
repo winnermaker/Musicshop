@@ -174,7 +174,7 @@ namespace Customer
             //Regex regex = new Regex(@"\d+");
             //Match match = regex.Match("Dot 55 Perls");
             //if (match.Success)
-            Regex regex = new Regex(@"^([a-zA-Z0-9]+[-_.]*)+@([a-zA-Z0-9]+[-_.]*[a-zA-Z0-9]+)+\.[a-zA-Z]{2,3}$");
+            Regex regex = new Regex(@"^([a-zA-Z0-9]+([-_.]*[a-zA-Z0-9]+)*)+@([a-zA-Z0-9]+([-_.]*[a-zA-Z0-9]+)*)+\.[a-zA-Z]{2,3}$");
             Match match = regex.Match(txtCustMail.Text);
             if (!match.Success)
             {

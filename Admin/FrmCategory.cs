@@ -4,14 +4,14 @@ using System.Windows.Forms;
 
 namespace Admin
 {
-    public partial class FrmCategory : Form
+    sealed partial class FrmCategory : Form
     {
+        public static readonly FrmCategory Instance = new FrmCategory();
         private clsCategory _Category;
         private static Dictionary<string, FrmCategory> _CategoryFormList = new Dictionary<string, FrmCategory>();
-        public FrmCategory()
+        private FrmCategory()
         {
             InitializeComponent();
-            txtCategory.Enabled = false;
         }
 
         private void add_Click(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace Admin
 
         private void updateForm()
         {
-            txtCategory.Text = _Category.CategoryName;
+            lblCategory.Text = _Category.CategoryName;
             rtxtDescription.Text = _Category.CategoryDescription;
         }
 
@@ -108,15 +108,7 @@ namespace Admin
 
         private void lstInstruments_DoubleClick(object sender, EventArgs e)
         {
-            try
-            {
-                FrmInstrument.DispatchInstrumentForm(lstInstruments.SelectedValue as clsAllInstruments);
-                updateDisplay();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            editInstrument();
         }
 
         private async void btnDelete_ClickAsync(object sender, EventArgs e)
@@ -128,6 +120,24 @@ namespace Admin
                 MessageBox.Show(await ServiceClient.DeleteInstrumentAsync(lstInstruments.SelectedItem as clsAllInstruments));
                 refreshFormFromDBAsync(_Category.CategoryName);
                 FrmMain.Instance.UpdateDisplayAsync();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            editInstrument();
+        }
+
+        public void editInstrument()
+        {
+            try
+            {
+                FrmInstrument.DispatchInstrumentForm(lstInstruments.SelectedValue as clsAllInstruments);
+                updateDisplay();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

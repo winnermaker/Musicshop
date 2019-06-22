@@ -32,6 +32,10 @@ namespace Admin
                     MessageBox.Show(await ServiceClient.UpdateInstrumentAsync(_Instrument));
                 Close();
             }
+            else
+            {
+                MessageBox.Show("One or more fields are empty or null", "Empty Field");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -46,7 +50,15 @@ namespace Admin
         }
         public virtual bool isValid()
         {
-            return true;
+            if(txtName.Text != "" && txtTuning.Text != "" && nudPrice.Value != 0 && nudQuantity.Value != 0 && nudSerialNo.Value != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
         protected virtual void updateForm()
@@ -64,7 +76,7 @@ namespace Admin
             _Instrument.InstrumentName = txtName.Text;
             _Instrument.Price = nudPrice.Value;
             _Instrument.Quantity = Convert.ToInt32(nudQuantity.Value);
-            _Instrument.Tuning = txtTuning.Text;
+            _Instrument.Tuning = txtTuning.Text.ToUpper();
             _Instrument.SerialNo = Convert.ToInt32(nudSerialNo.Value);
         }
         public delegate void LoadInstrumentFormDelegate(clsAllInstruments prInstrument);

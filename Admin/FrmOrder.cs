@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Admin
 {
     sealed partial class FrmOrder : Form
     {
-        private static readonly FrmOrder _Instance = new FrmOrder();
+        public static readonly FrmOrder Instance = new FrmOrder();
 
-        internal static FrmOrder Instance => _Instance;
         private List<clsMyOrder> _Orderlist = new List<clsMyOrder>();
 
         private FrmOrder()
         {
             InitializeComponent();
-            txtValue.Enabled = false;
         }
         public async void UpdateDisplayAsync()
         {
@@ -29,7 +29,7 @@ namespace Admin
                 _Orderlist = await ServiceClient.GetOrdersAsync();
                 lstOrder.DataSource = null;
                 lstOrder.DataSource = _Orderlist;
-                txtValue.Text = TotalValue().ToString();
+                lblTotalValue.Text = TotalValue().ToString("C2");
             }
             catch (Exception e)
             {
@@ -58,7 +58,7 @@ namespace Admin
             UpdateDisplayAsync();
         }
 
-        public Decimal TotalValue()
+        public decimal TotalValue()
         {
             decimal lcTotal = 0;
             foreach (clsMyOrder lcOrder in _Orderlist)
