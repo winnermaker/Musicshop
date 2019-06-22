@@ -13,7 +13,7 @@ namespace ShopSelfhost
         static void Main(string[] args)
         {
             // Set up server configuration
-            Uri _baseAddress = new Uri("http://localhost:60064/");
+            Uri _baseAddress = new Uri("http://localhost:60065/");
             HttpSelfHostConfiguration config = new HttpSelfHostConfiguration(_baseAddress);
             config.Routes.MapHttpRoute(
             name: "DefaultApi",
@@ -24,7 +24,7 @@ namespace ShopSelfhost
             HttpSelfHostServer server = new HttpSelfHostServer(config);
             // Start listening
             server.OpenAsync().Wait();
-            Console.WriteLine("Gallery Web-API Self hosted on " + _baseAddress);
+            Console.WriteLine("Musichop Web-API Self hosted on " + _baseAddress);
             Console.WriteLine("Hit ENTER to exit...");
             Console.ReadLine();
             server.CloseAsync().Wait();

@@ -119,10 +119,29 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="ClsUtil.cs" />
+    <Compile Include="DTO.cs" />
+    <Compile Include="IInstrumentControl.cs" />
+    <Compile Include="pgMain.xaml.cs">
+      <DependentUpon>pgMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pgCategory.xaml.cs">
+      <DependentUpon>pgCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pgInstrument.xaml.cs">
+      <DependentUpon>pgInstrument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pgOrder.xaml.cs">
+      <DependentUpon>pgOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceClient.cs" />
+    <Compile Include="ucInstrmentNew.xaml.cs">
+      <DependentUpon>ucInstrmentNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucInstrumentUsed.xaml.cs">
+      <DependentUpon>ucInstrumentUsed.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -145,14 +164,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
+    <Page Include="pgMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="pgCategory.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="pgInstrument.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="pgOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucInstrmentNew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucInstrumentUsed.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.7</Version>
+      <Version>6.2.8</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.2</Version>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
