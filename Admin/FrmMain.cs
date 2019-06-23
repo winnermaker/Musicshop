@@ -75,7 +75,7 @@ namespace Admin
                 }
         }
 
-        private void FrmMain_Load_1(object sender, EventArgs e)
+        private void FrmMain_Load(object sender, EventArgs e)
         {
             UpdateDisplayAsync();
         }
