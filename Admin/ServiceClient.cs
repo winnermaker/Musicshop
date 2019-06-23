@@ -23,7 +23,13 @@ namespace Admin
                 (await lcHttpClient.GetStringAsync
                 ("http://localhost:60065/api/shop/GetCategory?CategoryName=" + prCategoryName));
         }
-
+        internal async static Task<clsAllInstruments> GetInstrumentAsync(int prSerialNo)
+        {
+            using (HttpClient lcHttpClient = new HttpClient())
+                return JsonConvert.DeserializeObject<clsAllInstruments>
+                (await lcHttpClient.GetStringAsync
+                ("http://localhost:60065/api/shop/GetInstrument?SerialNo=" + prSerialNo));
+        }
         internal static async Task<string> InsertInstrumentAsync(clsAllInstruments prInstrument)
         {
             return await InsertOrUpdateAsync(prInstrument, "http://localhost:60065/api/shop/PostInstrument", "POST");

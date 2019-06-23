@@ -132,8 +132,16 @@ namespace Admin
         {
             try
             {
-                FrmInstrument.DispatchInstrumentForm(lstInstruments.SelectedValue as clsAllInstruments);
-                updateDisplay();
+                if(lstInstruments.SelectedValue != null)
+                {
+                    FrmInstrument.DispatchInstrumentForm(lstInstruments.SelectedValue as clsAllInstruments);
+                    updateDisplay();
+                }
+                else
+                {
+                    MessageBox.Show("Please select an instrument to edit.","No Instrument selected");
+                }
+                
             }
             catch (Exception ex)
             {

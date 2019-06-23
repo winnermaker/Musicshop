@@ -35,28 +35,27 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 260);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Location = new System.Drawing.Point(7, 135);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 25);
+            this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Manufacturer";
             // 
             // txtManufacturer
             // 
-            this.txtManufacturer.Location = new System.Drawing.Point(166, 255);
-            this.txtManufacturer.Margin = new System.Windows.Forms.Padding(6);
+            this.txtManufacturer.Location = new System.Drawing.Point(83, 133);
+            this.txtManufacturer.MaxLength = 80;
             this.txtManufacturer.Name = "txtManufacturer";
-            this.txtManufacturer.Size = new System.Drawing.Size(312, 31);
+            this.txtManufacturer.Size = new System.Drawing.Size(158, 20);
             this.txtManufacturer.TabIndex = 12;
             // 
             // FrmNewInstrument
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.ClientSize = new System.Drawing.Size(714, 371);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(357, 193);
             this.Controls.Add(this.txtManufacturer);
             this.Controls.Add(this.label5);
-            this.Margin = new System.Windows.Forms.Padding(12);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FrmNewInstrument";
             this.Text = "New Instrument";
             this.Controls.SetChildIndex(this.label5, 0);

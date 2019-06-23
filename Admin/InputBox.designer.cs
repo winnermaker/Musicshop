@@ -38,7 +38,7 @@ namespace Admin
             // btnOK
             // 
             this.btnOK.Location = new System.Drawing.Point(544, 150);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(6);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(150, 44);
             this.btnOK.TabIndex = 11;
@@ -49,7 +49,7 @@ namespace Admin
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(382, 150);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 44);
             this.btnCancel.TabIndex = 10;
@@ -70,7 +70,8 @@ namespace Admin
             // txtAnswer
             // 
             this.txtAnswer.Location = new System.Drawing.Point(38, 83);
-            this.txtAnswer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtAnswer.Margin = new System.Windows.Forms.Padding(6);
+            this.txtAnswer.MaxLength = 1;
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(652, 31);
             this.txtAnswer.TabIndex = 1;
@@ -97,7 +98,7 @@ namespace Admin
             this.Controls.Add(this.lblQuestion);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "InputBox";
             this.Text = "InputBox";
             this.ResumeLayout(false);

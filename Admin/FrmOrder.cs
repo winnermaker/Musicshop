@@ -65,5 +65,23 @@ namespace Admin
                 lcTotal += lcOrder.OrderPrice;
             return lcTotal;
         }
+
+        private void lstOrder_DoubleClick(object sender, EventArgs e)
+        {
+            seeDetails();
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            seeDetails();
+        }
+        public void seeDetails()
+        {
+            clsMyOrder lcOrder = (clsMyOrder)lstOrder.SelectedItem;
+            if(lcOrder != null)
+            {
+                FrmOrderDetails.Instance.ShowDialog(lcOrder);
+            }
+        }
     }
 }

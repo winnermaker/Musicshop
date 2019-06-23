@@ -173,7 +173,7 @@ namespace ShopSelfhost
             try
             {
                 int lcRecCount = clsDbConnection.Execute(
-                                  "UPDATE instrument SET InstrumentType = @InstrumentType, Quantity = @Quantity, Tuning = @Tuning, Price = @Price, ModifiedDate = @ModifiedDate, Manufacturer = @Manufacturer, MyCondition = @MyCondition WHERE CategoryName = @CategoryName AND InstrumentName = @InstrumentName",
+                                  "UPDATE instrument SET InstrumentName = @InstrumentName, InstrumentType = @InstrumentType, Quantity = @Quantity, Tuning = @Tuning, Price = @Price, ModifiedDate = @ModifiedDate, Manufacturer = @Manufacturer, MyCondition = @MyCondition WHERE CategoryName = @CategoryName AND SerialNo = @SerialNo",
                                    prepareInstrumentParameters(prInstrument));
                 if (lcRecCount == 1)
                     return "One Instrument updated";
