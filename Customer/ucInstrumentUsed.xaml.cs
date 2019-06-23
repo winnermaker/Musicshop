@@ -26,7 +26,7 @@ namespace Customer
 
         public void UpdateControl(clsAllInstruments prInstrument)
         {
-            switch(prInstrument.Condition)
+            switch(prInstrument.MyCondition)
             {
                 case "As New":
                     rbtnNew.IsChecked = true;

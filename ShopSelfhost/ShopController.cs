@@ -28,7 +28,7 @@ namespace ShopSelfhost
             par.Add("InstrumentType", prInstrument.InstrumentType);
             par.Add("ModifiedDate", prInstrument.ModifiedDate);
             par.Add("Manufacturer", prInstrument.Manufacturer);
-            par.Add("Condition", prInstrument.Condition);
+            par.Add("MyCondition", prInstrument.MyCondition);
             par.Add("CategoryName", prInstrument.CategoryName);
             return par;
         }
@@ -62,7 +62,7 @@ namespace ShopSelfhost
 
         public List<string> GetCategoryNames()
         {
-            DataTable lcResult = clsDbConnection.GetDataTable("SELECT CategoryName FROM Category", null);
+            DataTable lcResult = clsDbConnection.GetDataTable("SELECT CategoryName FROM category", null);
             List<string> lcNames = new List<string>();
             foreach (DataRow dr in lcResult.Rows)
                 lcNames.Add((string)dr[0]);
@@ -74,7 +74,7 @@ namespace ShopSelfhost
             Dictionary<string, object> par = new Dictionary<string, object>(1);
             par.Add("CategoryName", CategoryName);
             DataTable lcResult =
-            clsDbConnection.GetDataTable("SELECT * FROM Category WHERE CategoryName = @CategoryName", par);
+            clsDbConnection.GetDataTable("SELECT * FROM category WHERE CategoryName = @CategoryName", par);
             if (lcResult.Rows.Count > 0)
                 return new clsCategory()
                 {
@@ -90,7 +90,7 @@ namespace ShopSelfhost
         {
             Dictionary<string, object> par = new Dictionary<string, object>(1);
             par.Add("CategoryName", CategoryName);
-            DataTable lcResult = clsDbConnection.GetDataTable("SELECT * FROM Instrument WHERE CategoryName = @CategoryName", par);
+            DataTable lcResult = clsDbConnection.GetDataTable("SELECT * FROM instrument WHERE CategoryName = @CategoryName", par);
             List<clsAllInstruments> lcInstruments = new List<clsAllInstruments>();
             foreach (DataRow dr in lcResult.Rows)
                 lcInstruments.Add(dataRow2AllInstrument(dr));
@@ -109,7 +109,7 @@ namespace ShopSelfhost
                 InstrumentType = Convert.ToChar(prDataRow["InstrumentType"]),
                 ModifiedDate = Convert.ToDateTime(prDataRow["ModifiedDate"]),
                 Manufacturer = Convert.ToString(prDataRow["Manufacturer"]),
-                Condition = Convert.ToString(prDataRow["Condition"]),
+                MyCondition = Convert.ToString(prDataRow["MyCondition"]),
                 CategoryName = Convert.ToString(prDataRow["CategoryName"]),
 
             };
@@ -132,7 +132,7 @@ namespace ShopSelfhost
 
         public List<clsMyOrder> GetOrders()
         {
-            DataTable lcResult = clsDbConnection.GetDataTable("SELECT * FROM MyOrder", null);
+            DataTable lcResult = clsDbConnection.GetDataTable("SELECT * FROM myorder", null);
            
             List<clsMyOrder> lcOrders = new List<clsMyOrder>();
             foreach (DataRow dr in lcResult.Rows)
@@ -145,7 +145,7 @@ namespace ShopSelfhost
             try
             {
                 int lcRecCount = clsDbConnection.Execute(
-                "UPDATE Category SET CategoryDescription = @CategoryDescription WHERE  CategoryName = @CategoryName",
+                "UPDATE category SET CategoryDescription = @CategoryDescription WHERE  CategoryName = @CategoryName",
                 prepareCategoryParameters(prCategory));
                 if (lcRecCount == 1)
                     return "One category updated";
@@ -162,7 +162,7 @@ namespace ShopSelfhost
             try
             {
                 int lcRecCount = clsDbConnection.Execute(
-               "UPDATE Instrument SET InstrumentType = @InstrumentType, Quantity = @Quantity, Tuning = @Tuning, Price = @Price, ModifiedDate = @ModifiedDate, Manufacturer = @Manufacturer, Condition = @Condition WHERE CategoryName = @CategoryName AND InstrumentName = @InstrumentName",
+               "UPDATE instrument SET InstrumentType = @InstrumentType, Quantity = @Quantity, Tuning = @Tuning, Price = @Price, ModifiedDate = @ModifiedDate, Manufacturer = @Manufacturer, MyCondition = @MyCondition WHERE CategoryName = @CategoryName AND InstrumentName = @InstrumentName",
                 prepareInstrumentParameters(prInstrument));
                 if (lcRecCount == 1)
                     return "One Instrument updated";
@@ -178,9 +178,9 @@ namespace ShopSelfhost
         {   //insert
             try
             {
-                int lcRecCount = clsDbConnection.Execute("INSERT INTO Instrument"+
-                "(SerialNo, Quantity, Tuning, InstrumentName, Price, InstrumentType, ModifiedDate, Manufacturer, Condition, CategoryName)" +
-                "VALUES (@SerialNo, @Quantity, @Tuning, @InstrumentName, @Price, @InstrumentType, @ModifiedDate, @Manufacturer, @Condition, @CategoryName)",
+                int lcRecCount = clsDbConnection.Execute("INSERT INTO instrument"+
+                "(SerialNo, Quantity, Tuning, InstrumentName, Price, InstrumentType, ModifiedDate, Manufacturer, MyCondition, CategoryName)" +
+                "values (@SerialNo, @Quantity, @Tuning, @InstrumentName, @Price, @InstrumentType, @ModifiedDate, @Manufacturer, @MyCondition, @CategoryName)",
                 prepareInstrumentParameters(prInstrument));
                 if (lcRecCount == 1)
                     return "One instrument inserted";
@@ -196,7 +196,7 @@ namespace ShopSelfhost
         {   //delete
             try
             {
-                int lcRecCount = clsDbConnection.Execute("DELETE FROM Instrument WHERE SerialNo = @SerialNo",
+                int lcRecCount = clsDbConnection.Execute("DELETE FROM instrument WHERE SerialNo = @SerialNo",
                     prepareInstrumentParameters(SerialNo));
 
                 if (lcRecCount == 1)
@@ -213,8 +213,8 @@ namespace ShopSelfhost
         {   //insert
             try
             {
-                int lcRecCount = clsDbConnection.Execute("INSERT INTO MyOrder (OrderPrice, OrderDate, Quantity, CustName, CustPhone, CustMail, SerialNo)" +
-                "VALUES (@OrderPrice, @OrderDate, @Quantity, @CustName, @CustPhone, @CustMail, @SerialNo)",
+                int lcRecCount = clsDbConnection.Execute("INSERT INTO myorder (OrderPrice, OrderDate, Quantity, CustName, CustPhone, CustMail, SerialNo)" +
+                "values (@OrderPrice, @OrderDate, @Quantity, @CustName, @CustPhone, @CustMail, @SerialNo)",
                 prepareOrderParameters(prOrder));
                 if (lcRecCount == 1)
                     return "One Order inserted";
@@ -231,7 +231,7 @@ namespace ShopSelfhost
         {   //delete
             try
             {
-                int lcRecCount = clsDbConnection.Execute("DELETE FROM MyOrder WHERE OrderID = @OrderID",
+                int lcRecCount = clsDbConnection.Execute("DELETE FROM myorder WHERE OrderID = @OrderID",
                     prepareOrderParameters(OrderID));
 
                 if (lcRecCount == 1)

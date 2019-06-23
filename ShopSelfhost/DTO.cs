@@ -22,7 +22,7 @@ namespace ShopSelfhost
         public char InstrumentType { get; set; }
         public DateTime ModifiedDate { get; set; }
         public string Manufacturer { get; set; }
-        public string Condition { get; set; }
+        public string MyCondition { get; set; }
         public string CategoryName { get; set; }
 
 

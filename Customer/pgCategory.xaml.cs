@@ -47,7 +47,6 @@ namespace Customer
             {
 
             }
-         
         }
 
         private void BtnOpen_Click(object sender, RoutedEventArgs e)
@@ -61,5 +60,10 @@ namespace Customer
             if (lstInstruments.SelectedItem != null)
                 Frame.Navigate(typeof(pgInstrument), lstInstruments.SelectedItem);
         }
+
+        /*private async void refreshFormFromDBAsync(string prCategoryName)
+        {
+            await ServiceClient.GetCategoryAsync(prCategoryName);
+        }*/
     }
 }
