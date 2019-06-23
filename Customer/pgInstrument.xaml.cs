@@ -44,6 +44,11 @@ namespace Customer
             txtPrice.Text = _Instrument.Price.ToString().EmptyIfNull();
             txtTuning.Text = _Instrument.Tuning.EmptyIfNull();
             (ctcNewUsed.Content as IInstrumentControl).UpdateControl(prInstrument);
+            if(_Instrument.Quantity == 0)
+            {
+                btnOrder.IsEnabled = false;
+                txtMessage.Text = "Sorry - this instrument is out of Stock";
+            }
         }
         private void DispatchWorkContent(clsAllInstruments prInstrument)
         {

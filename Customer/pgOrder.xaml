@@ -22,10 +22,10 @@
         <TextBlock HorizontalAlignment="Left" Margin="85,500,0,0" Text="Phone" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="85,550,0,0" Text="Mail" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
         
-        <TextBox x:Name="txtInstrument" HorizontalAlignment="Left" Margin="300,100,0,0" Text="" VerticalAlignment="Top" FontSize="20" Width="167" IsReadOnly="True"/>
-        <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Margin="300,150,0,0" Text="" VerticalAlignment="Top" FontSize="20" Width="167" IsReadOnly="True"/>
-        <TextBox x:Name="txtPriceSingleInst" HorizontalAlignment="Left" Margin="300,200,0,0" Text="" VerticalAlignment="Top" FontSize="20" Width="167" IsReadOnly="True"/>
-        <TextBox x:Name="txtTotalPrice" HorizontalAlignment="Left" Margin="300,250,0,0" Text="" VerticalAlignment="Top" FontSize="20" Width="167" IsReadOnly="True"/>
+        <TextBox x:Name="txtInstrument" HorizontalAlignment="Left" Margin="300,100,0,0" Text="" VerticalAlignment="Top" FontSize="20" Width="250" IsReadOnly="True"/>
+        <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Margin="300,150,0,0" Text="" VerticalAlignment="Top" FontSize="20" Width="250" IsReadOnly="True"/>
+        <TextBox x:Name="txtPriceSingleInst" HorizontalAlignment="Left" Margin="300,200,0,0" Text="" VerticalAlignment="Top" FontSize="20" Width="250" IsReadOnly="True"/>
+        <TextBox x:Name="txtTotalPrice" HorizontalAlignment="Left" Margin="300,250,0,0" Text="" VerticalAlignment="Top" FontSize="20" Width="250" IsReadOnly="True"/>
        
         <TextBox x:Name="txtOrderQuantity" HorizontalAlignment="Left" Margin="300,400,0,0" Text="" VerticalAlignment="Top" FontSize="20" Width="380" InputScope="Number" PlaceholderText="" TextChanged="TxtOrderQuantity_TextChanged"/>
         <TextBox x:Name="txtCustName" HorizontalAlignment="Left" Margin="300,450,0,0" Text="" VerticalAlignment="Top" FontSize="20" Width="380" PlaceholderText="Firstname Lastname" InputScope="PersonalFullName" TextChanged="TxtCustName_TextChanged"/>

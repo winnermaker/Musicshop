@@ -85,6 +85,17 @@ namespace ShopSelfhost
             else
                 return null;
         }
+        public clsAllInstruments GetInstrument(int SerialNo)
+        {
+            Dictionary<string, object> par = new Dictionary<string, object>(1);
+            par.Add("SerialNo", SerialNo);
+            DataTable lcResult =
+            clsDbConnection.GetDataTable("SELECT * FROM instrument WHERE SerialNo = @SerialNo", par);
+            if (lcResult.Rows.Count > 0)
+                return dataRow2AllInstrument(lcResult.Rows[0]);
+            else
+                return null;
+        }
 
         private List<clsAllInstruments> GetCategoryInstrument(string CategoryName)
         {
@@ -162,8 +173,8 @@ namespace ShopSelfhost
             try
             {
                 int lcRecCount = clsDbConnection.Execute(
-               "UPDATE instrument SET InstrumentType = @InstrumentType, Quantity = @Quantity, Tuning = @Tuning, Price = @Price, ModifiedDate = @ModifiedDate, Manufacturer = @Manufacturer, MyCondition = @MyCondition WHERE CategoryName = @CategoryName AND InstrumentName = @InstrumentName",
-                prepareInstrumentParameters(prInstrument));
+                                  "UPDATE instrument SET InstrumentType = @InstrumentType, Quantity = @Quantity, Tuning = @Tuning, Price = @Price, ModifiedDate = @ModifiedDate, Manufacturer = @Manufacturer, MyCondition = @MyCondition WHERE CategoryName = @CategoryName AND InstrumentName = @InstrumentName",
+                                   prepareInstrumentParameters(prInstrument));
                 if (lcRecCount == 1)
                     return "One Instrument updated";
                 else
@@ -172,6 +183,19 @@ namespace ShopSelfhost
             catch (Exception ex)
             {
                 return ex.GetBaseException().Message;
+            }
+        }
+
+        public string PutInstrumentTest(clsAllInstruments prInstrument)
+        {
+            //update test
+            if (prInstrument.ModifiedDate == (GetInstrument(prInstrument.SerialNo)).ModifiedDate)
+            {
+                return "Instrument NOT changed in DB";
+            }
+            else
+            {
+                return "Instrument changed in DB";
             }
         }
         public string PostInstrument(clsAllInstruments prInstrument)

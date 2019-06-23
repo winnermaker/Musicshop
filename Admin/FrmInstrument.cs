@@ -67,7 +67,7 @@ namespace Admin
             txtName.Text = _Instrument.InstrumentName;
             txtTuning.Text = _Instrument.Tuning;
             nudPrice.Value  = _Instrument.Price;
-            nudQuantity.Value = _Instrument.Quantity;
+            nudQuantity.Value = _Instrument.Quantity ;
             nudSerialNo.Enabled = _Instrument.SerialNo.Equals(0);
         }
 

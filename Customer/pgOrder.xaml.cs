@@ -37,6 +37,11 @@ namespace Customer
             txtQuantity.Text = _Instrument.Quantity.ToString().EmptyIfNull();
             txtInstrument.Text = _Instrument.InstrumentName.EmptyIfNull();
             txtTotalPrice.Text = TotalPrice().ToString().EmptyIfNull();
+            if(_Instrument.Quantity == 0)
+            {
+                btnOrder.IsEnabled = false;
+                txtMessage.Text = "Sorry - this instrument is out of Stock";
+            }
         }
 
         private void pushData()
@@ -66,37 +71,51 @@ namespace Customer
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            txtOrderQuantity.Text = "1";
             UpdateDisplay();
         }
 
         private async void BtnOrder_Click(object sender, RoutedEventArgs e)
         {
             if (Convert.ToInt16(txtOrderQuantity.Text) != 0 && txtCustName.Text != "" && txtCustPhone.Text != "" && txtCustMail.Text != "") {
-
-                MessageDialog dialog = new MessageDialog("Do you want to confirm your Order?", "Confirm Order");
-                dialog.Commands.Add(new UICommand ("Yes", null));
-                dialog.Commands.Add(new UICommand("No", null));
-                var result = await dialog.ShowAsync();
-
-                if(result.Label == "Yes")
+                try
                 {
-                    try
+                    if (await Customer.ServiceClient.UpdateInstrumentTestAsync(_Instrument) == "\"Instrument changed in DB\"")
                     {
-                        pushData();
-                        await Customer.ServiceClient.InsertOrderAsync(_Order);
-                        await Customer.ServiceClient.UpdateInstrumentAsync(_Instrument);
+                        _Instrument = await Customer.ServiceClient.GetInstrumentAsync(_Instrument.SerialNo);
                         UpdateDisplay();
-                        txtMessage.Text = "Order placed";
+                        txtMessage.Text = "Instrument changed - Please try your order again";
                     }
-                    catch (Exception)
+                    else
                     {
-                        txtMessage.Text = "An Error Occured";
+                        MessageDialog dialog = new MessageDialog("Do you want to confirm your Order?", "Confirm Order");
+                        dialog.Commands.Add(new UICommand("Yes", null));
+                        dialog.Commands.Add(new UICommand("No", null));
+                        var result = await dialog.ShowAsync();
+
+                        if (result.Label == "Yes")
+                        {
+                            try
+                            {
+                                pushData();
+
+                                await Customer.ServiceClient.UpdateInstrumentTestAsync(_Instrument);
+                                await Customer.ServiceClient.InsertOrderAsync(_Order);
+                                UpdateDisplay();
+                                txtMessage.Text = "Order placed";
+                            }
+
+                            catch (Exception)
+                            {
+                                txtMessage.Text = "An Error Occured";
+                            }
+                        }
+
                     }
                 }
-                else
+                catch (Exception)
                 {
-
-                    Frame.GoBack();
+                    txtMessage.Text = "An Error Occured";
                 }
             }
             else
@@ -109,12 +128,6 @@ namespace Customer
         {
             base.OnNavigatedTo(e);
             _Instrument = (clsAllInstruments)e.Parameter;
-            txtOrderQuantity.Text = "1";
-            if (_Instrument.Quantity == 0)
-            {
-                btnOrder.IsEnabled = false;
-                txtMessage.Text = "Sorry - this instrument is out of Stock";
-            }
         }
 
         private void TxtOrderQuantity_TextChanged(object sender, TextChangedEventArgs e)
@@ -149,15 +162,15 @@ namespace Customer
             }
             else
             {
-                txtMessage.Text = "";
+                txtMessage.Text = "Name valid";
             }
-
-
         }
 
         private void TxtCustPhone_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Regex regex = new Regex(@"^((\+[1-9]{1,4})?[1-9]+|0[1-9]+)(([-/][0-9]+)?|[0-9]+)$");
+            //Regex regex = new Regex(@"^((\+[1-9]{1,4})?[1-9]+|0[1-9]+)(([-/][0-9]+)?|[0-9]+)$");
+
+            Regex regex = new Regex(@"^((\+[1-9]{1,6})|0[1-9]{1,3})(([-/][0-9]{5,})?|[0-9]{5,})$");
             Match match = regex.Match(txtCustPhone.Text);
             if (!match.Success)
             {
@@ -165,16 +178,17 @@ namespace Customer
             }
             else
             {
-                txtMessage.Text = "";
+                txtMessage.Text = "Phonenumber valid";
             }
         }
 
         private void TxtCustMail_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //Regex regex = new Regex(@"\d+");
-            //Match match = regex.Match("Dot 55 Perls");
+            ////Regex regex = new Regex(@"^([a-zA-Z0-9]+([-_.]?[a-zA-Z0-9]+)*)+@([a-zA-Z0-9]+([-_.]?[a-zA-Z0-9]+)*)+\.[a-zA-Z]{2,3}$");
+            //Match match = regex.Match(String);
             //if (match.Success)
-            Regex regex = new Regex(@"^([a-zA-Z0-9]+([-_.]*[a-zA-Z0-9]+)*)+@([a-zA-Z0-9]+([-_.]*[a-zA-Z0-9]+)*)+\.[a-zA-Z]{2,3}$");
+
+            Regex regex = new Regex(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}$");
             Match match = regex.Match(txtCustMail.Text);
             if (!match.Success)
             {
@@ -182,8 +196,9 @@ namespace Customer
             }
             else
             {
-                txtMessage.Text = "";
+                txtMessage.Text = "Email valid";
             }
+
         }
     }
 }

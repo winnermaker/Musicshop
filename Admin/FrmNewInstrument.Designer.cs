@@ -49,7 +49,6 @@
             this.txtManufacturer.Name = "txtManufacturer";
             this.txtManufacturer.Size = new System.Drawing.Size(312, 31);
             this.txtManufacturer.TabIndex = 12;
-            this.txtManufacturer.UseWaitCursor = true;
             // 
             // FrmNewInstrument
             // 
