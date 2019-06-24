@@ -99,7 +99,7 @@ namespace Customer
                             {
                                 pushData();
 
-                                await Customer.ServiceClient.UpdateInstrumentTestAsync(_Instrument);
+                                await Customer.ServiceClient.UpdateInstrumentAsync(_Instrument);
                                 await Customer.ServiceClient.InsertOrderAsync(_Order);
                                 UpdateDisplay();
                                 txtMessage.Text = "Order placed";
