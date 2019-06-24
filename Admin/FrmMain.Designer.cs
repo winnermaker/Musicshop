@@ -38,9 +38,10 @@
             // 
             // btnOrder
             // 
-            this.btnOrder.Location = new System.Drawing.Point(246, 12);
+            this.btnOrder.Location = new System.Drawing.Point(492, 23);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(75, 39);
+            this.btnOrder.Size = new System.Drawing.Size(150, 75);
             this.btnOrder.TabIndex = 0;
             this.btnOrder.Text = "Manage Orders";
             this.btnOrder.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(138, 64);
+            this.btnOpen.Location = new System.Drawing.Point(276, 123);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.Size = new System.Drawing.Size(150, 44);
             this.btnOpen.TabIndex = 1;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(138, 103);
+            this.btnClose.Location = new System.Drawing.Point(276, 198);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(150, 44);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -69,9 +72,12 @@
             // lstCategory
             // 
             this.lstCategory.FormattingEnabled = true;
-            this.lstCategory.Location = new System.Drawing.Point(12, 31);
+            this.lstCategory.ItemHeight = 25;
+            this.lstCategory.Location = new System.Drawing.Point(24, 60);
+            this.lstCategory.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lstCategory.Name = "lstCategory";
-            this.lstCategory.Size = new System.Drawing.Size(120, 95);
+            this.lstCategory.Size = new System.Drawing.Size(236, 179);
+            this.lstCategory.Sorted = true;
             this.lstCategory.TabIndex = 3;
             this.lstCategory.DoubleClick += new System.EventHandler(this.lstCategory_DoubleClick);
             // 
@@ -79,24 +85,25 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 12);
+            this.label1.Location = new System.Drawing.Point(26, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
+            this.label1.Size = new System.Drawing.Size(118, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "Category";
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 144);
+            this.ClientSize = new System.Drawing.Size(666, 277);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstCategory);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnOrder);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMain";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.FrmMain_Load);

@@ -57,7 +57,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(1692, 533);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(150, 44);
             this.btnDelete.TabIndex = 2;
@@ -68,7 +68,7 @@
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(1854, 533);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(150, 44);
             this.btnClose.TabIndex = 3;
@@ -93,9 +93,10 @@
             this.lstOrder.FormattingEnabled = true;
             this.lstOrder.ItemHeight = 28;
             this.lstOrder.Location = new System.Drawing.Point(22, 85);
-            this.lstOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstOrder.Margin = new System.Windows.Forms.Padding(4);
             this.lstOrder.Name = "lstOrder";
             this.lstOrder.Size = new System.Drawing.Size(1978, 368);
+            this.lstOrder.Sorted = true;
             this.lstOrder.TabIndex = 6;
             this.lstOrder.DoubleClick += new System.EventHandler(this.lstOrder_DoubleClick);
             // 
@@ -178,7 +179,7 @@
             // btnDetails
             // 
             this.btnDetails.Location = new System.Drawing.Point(1524, 533);
-            this.btnDetails.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnDetails.Margin = new System.Windows.Forms.Padding(6);
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.Size = new System.Drawing.Size(150, 44);
             this.btnDetails.TabIndex = 14;
@@ -205,7 +206,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmOrder";
             this.Text = "Order Log";
             this.Load += new System.EventHandler(this.FrmOrder_Load);

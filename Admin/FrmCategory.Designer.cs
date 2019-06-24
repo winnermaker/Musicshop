@@ -71,7 +71,7 @@
             // rtxtDescription
             // 
             this.rtxtDescription.Location = new System.Drawing.Point(182, 69);
-            this.rtxtDescription.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rtxtDescription.Margin = new System.Windows.Forms.Padding(6);
             this.rtxtDescription.MaxLength = 255;
             this.rtxtDescription.Name = "rtxtDescription";
             this.rtxtDescription.Size = new System.Drawing.Size(1196, 106);
@@ -81,7 +81,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(24, 658);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(150, 44);
             this.btnAdd.TabIndex = 6;
@@ -92,7 +92,7 @@
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(24, 713);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(6);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(150, 44);
             this.btnEdit.TabIndex = 7;
@@ -103,7 +103,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(24, 769);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(150, 44);
             this.btnDelete.TabIndex = 8;
@@ -114,7 +114,7 @@
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(1230, 769);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(150, 44);
             this.btnClose.TabIndex = 9;
@@ -139,9 +139,10 @@
             this.lstInstruments.FormattingEnabled = true;
             this.lstInstruments.ItemHeight = 29;
             this.lstInstruments.Location = new System.Drawing.Point(12, 258);
-            this.lstInstruments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstInstruments.Margin = new System.Windows.Forms.Padding(4);
             this.lstInstruments.Name = "lstInstruments";
             this.lstInstruments.Size = new System.Drawing.Size(1366, 352);
+            this.lstInstruments.Sorted = true;
             this.lstInstruments.TabIndex = 14;
             this.lstInstruments.DoubleClick += new System.EventHandler(this.lstInstruments_DoubleClick);
             // 
@@ -244,7 +245,7 @@
             this.Controls.Add(this.rtxtDescription);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmCategory";
             this.Text = "Category";
             this.ResumeLayout(false);
