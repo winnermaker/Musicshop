@@ -34,7 +34,7 @@ namespace Admin
             }
             else
             {
-                MessageBox.Show("One or more fields are empty or null", "Empty Field");
+                MessageBox.Show("One or more fields are empty or 0", "Empty Field");
             }
         }
 

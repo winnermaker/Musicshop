@@ -117,7 +117,15 @@ namespace Admin
 
             if (lcIndex >= 0 && MessageBox.Show("Are you sure?", "Deleting instrument", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show(await ServiceClient.DeleteInstrumentAsync(lstInstruments.SelectedItem as clsAllInstruments));
+                string res = await ServiceClient.DeleteInstrumentAsync(lstInstruments.SelectedItem as clsAllInstruments);
+                if(res.Contains("FOREIGN KEY"))
+                {
+                    MessageBox.Show("There are still orders containing this Instrument. You need to delete them before you can delete the instrument.","Delete Order First");
+                }
+                else
+                {
+                    MessageBox.Show(res);
+                }
                 refreshFormFromDBAsync(_Category.CategoryName);
                 FrmMain.Instance.UpdateDisplayAsync();
             }
